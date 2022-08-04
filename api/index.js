@@ -11,6 +11,9 @@ const path = require("path");
 
 dotenv.config();
 app.use(express.json());
+app.get("/", (req, res) =>
+  res.send(`Server Running`)
+);
 app.use("/images", express.static(path.join(__dirname, "/images")));
 
 mongoose
